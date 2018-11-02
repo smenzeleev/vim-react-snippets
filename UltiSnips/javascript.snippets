@@ -62,46 +62,13 @@ snippet ism "Is mounted"
 isMounted()
 endsnippet
 
-snippet jsx "Define jsx dom" b
-/**
- * @jsx React.DOM
- */
-
-import React from 'react';
-
-let ${2:ClassName} = React.createClass({
-
-render() {
-	return (
-		${VISUAL}$4
-	);
-}
-
-});
-$0
-${3:module.exports = $2;}
-endsnippet
-
 snippet pt "propTypes" b
 propTypes: {
 	${1}: React.PropTypes.${2:string}
 }
 endsnippet
 
-snippet rcc "React.createClass" b
-let ${1:ClassName} = React.createClass({
-
-render() {
-	return (
-		${VISUAL}$2
-	)
-}
-
-})
-$0
-endsnippet
-
-snippet rcx "Extends React.Component" b
+snippet rcc "React class component" b
 class ${1:ClassName} extends React.Component {
 	render(){
 		return (
@@ -109,6 +76,12 @@ class ${1:ClassName} extends React.Component {
 		)
 	}
 }
+endsnippet
+
+snippet rfc "React functional component" b
+const ${1:ClassName} = props => {
+  return;
+};
 endsnippet
 
 snippet ren "render"
