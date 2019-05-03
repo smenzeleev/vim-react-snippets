@@ -2,72 +2,14 @@
 #  React snippets
 #
 
-snippet cdm "Component did mount" b
-componentDidMount() {
-	${1}
-}$0
+#Imports
+snippet ipt "Import propTypes" b
+import PropTypes from 'prop-types';'
 endsnippet
 
-snippet cdup "Component did update" b
-componentDidUpdate(prevProps, prevState) {
-	${1}
-}$0
-endsnippet
+#=======================================
 
-snippet cwm "Component will mount" b
-componentWillMount() {
-	${1}
-}$0
-endsnippet
-
-snippet cwr "Component will receive props" b
-componentWillReceiveProps(nextProps) {
-	${1}
-}$0
-endsnippet
-
-snippet cwun "Component will unmount" b
-componentWillUnmount() {
-	${1}
-}$0
-endsnippet
-
-snippet cwu "Component will update" b
-componentWillUpdate(nextProps, nextState) {
-	${1}
-}$0
-endsnippet
-
-snippet fup "Force update"
-forceUpdate(${1:callback})
-endsnippet
-
-snippet gdp "Get default props" b
-getDefaultProps() {
-	return {
-		${1}
-	}
-}$0
-endsnippet
-
-snippet gis "Get initial state" b
-getInitialState() {
-	return {
-		${1}: ${2}
-	}
-}$0
-endsnippet
-
-snippet ism "Is mounted"
-isMounted()
-endsnippet
-
-snippet pt "propTypes" b
-propTypes: {
-	${1}: React.PropTypes.${2:string}
-}
-endsnippet
-
+#==============New React components=====
 snippet rcc "React class component" b
 class ${1:ClassName} extends React.Component {
 	render(){
@@ -79,51 +21,56 @@ class ${1:ClassName} extends React.Component {
 endsnippet
 
 snippet rfc "React functional component" b
-const ${1:ClassName} = props => {
+export ${1:FunctionName}(props) {
   return;
 };
 endsnippet
 
-snippet ren "render"
-render() {
-	return (
-		${1:<div />}
-	)
-}$0
+snippet rsfc "React stateless functional component" b
+export const ${1:FunctionName} = props => {
+  return;
+};
 endsnippet
 
-snippet sst "Set state" b
-this.setState({
-	${1}: ${2}
-})$0
-endsnippet
+snippet nrcc "New React class component" b
+import React from 'react';
 
-snippet scu "Should component update"
-shouldComponentUpdate(nextProps, nextState) {
-	${1}
-}$0
-endsnippet
-
-snippet props "Get property" i
-this.props.${1}
-endsnippet
-
-snippet state "Get state" i
-this.state.${1}
-endsnippet
-
-snippet trp "Transfer props to"
-this.transferPropsTo(${VISUAL}$0)
-endsnippet
-
-# This snippet will only works if the keyword 'con' is the first word of line
-snippet con "Constructor for React.Component" b
-constructor(props, context) {
-	super(props, context)
-
-	this.state = {
-		$1: $2
+class ${1:ClassName} extends React.Component {
+	render(){
+		return (
+			$2
+		)
 	}
-}$0
-
+}
 endsnippet
+
+snippet nrfc "New React functional component" b
+import React, {useState, useEffect} from 'react';
+
+export ${1:FunctionName}(props) {
+  return;
+};
+endsnippet
+
+snippet nrsfc "New React stateless functional component" b
+import React from 'react';
+
+export const ${1:FunctionName} = props => {
+  return;
+};
+endsnippet
+#=======================================
+
+#============Utils======================
+snippet clg "console.log" w
+console.log("${1:VarName}:", {$1});
+endsnippet
+
+snippet cwn "console.warn" w
+console.warn("${1:VarName}:", {$1});
+endsnippet
+
+snippet cer "console.error" w
+console.error("${1:VarName}:", {$1});
+endsnippet
+#=======================================
